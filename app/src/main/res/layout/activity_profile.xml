@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#000000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profileActivity">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:tint="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+
+    <!-- Profile Title -->
+    <TextView
+        android:id="@+id/profileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/backButton"
+        app:layout_constraintTop_toTopOf="@id/backButton"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"
+        android:layout_marginStart="16dp" />
+
+    <!-- Support Button -->
+    <Button
+        android:id="@+id/supportButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="#222222"
+        android:drawableLeft="@drawable/baseline_message_24"
+        android:text="support"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/supportButton">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
+
+            <!-- Top Profile Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingTop="24dp"
+                android:paddingEnd="16dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/natural" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="andaz Kumar"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/memberSince"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="member since Dec, 2020"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/editProfile"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:backgroundTint="#222222"
+                    android:src="@drawable/baseline_edit_24"
+                    app:tint="#FFFFFF" />
+            </LinearLayout>
+
+            <!-- Garage Section -->
+            <LinearLayout
+                android:id="@+id/garageSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#1A1A1A"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/outline_directions_car_24"
+                    android:tint="#FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="get to know your vehicles, inside out"
+                        android:textColor="#AAAAAA"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CRED garage →"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Credit Score -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/creditScoreLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="credit score • REFRESH AVAILABLE"
+                    android:textColor="#00FF00"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/creditScoreValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="757"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/outline_arrow_right_alt_24"
+                    app:tint="#FFFFFF" />
+
+
+            </LinearLayout>
+
+            <!-- Lifetime Cashback -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/lifetimeLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="lifetime cashback"
+                    android:textColor="#AAAAAA"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/lifetimeCashbackValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹3"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/outline_arrow_right_alt_24"
+                    app:tint="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Bank Balance -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/bankBalanceLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="bank balance"
+                    android:textColor="#AAAAAA"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/bankBalanceValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="check"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/outline_arrow_right_alt_24"
+                    app:tint="#FFFFFF"/>
+            </LinearLayout>
+
+            <!-- Rewards Header -->
+            <TextView
+                android:id="@+id/rewardsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="YOUR REWARDS  BENEFITS"
+                android:textAllCaps="true"
+                android:textColor="#888888"
+                android:textSize="12sp" />
+
+            <!-- Cashback Balance -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/lifetimeCashbackLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="cashback balance"
+                    android:textColor="#AAAAAA"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cashbackBalanceValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹0"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/lifetimeCashbackLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/lifetimeCashbackLabel" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/outline_keyboard_arrow_right_24"
+                    app:tint="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Coins -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/CoinLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="coins"
+                    android:textColor="#AAAAAA"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/CoinValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="26,46,583"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/CoinLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/CoinLabel" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/outline_keyboard_arrow_right_24"
+                    app:tint="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- Refer and Earn -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/ReferLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="win upto Rs 1000"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ReferValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="refer and earn"
+                    android:textColor="#AAAAAA"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/ReferLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/ReferLabel" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/outline_keyboard_arrow_right_24"
+                    app:tint="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Transactions Header -->
+
+            <!-- All Transactions -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:paddingLeft="16dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/transactionTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TRANSACTIONS SUPPORT"
+                    android:textAllCaps="true"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="all transaction"
+                    android:textColor="#AAAAAA"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/transactionTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/transactionTitle" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/outline_keyboard_arrow_right_24"
+                    app:tint="#FFFFFF"
+
+                    android:layout_marginRight="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
